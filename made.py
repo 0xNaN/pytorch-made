@@ -96,6 +96,9 @@ class MADE(nn.Module):
     def forward(self, x):
         return self.net(x)
 
+    def current_ordering(self):
+        return self.orderings[(self.next_ordering - 1) % len(self.orderings)]
+
 # ------------------------------------------------------------------------------
 
 #if __name__ == '__main__':
